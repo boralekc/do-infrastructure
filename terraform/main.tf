@@ -103,18 +103,18 @@
 #   db_sonarqube       = "sonarDB"
 # }
 
-module "s3" {
-  source      = "./modules/s3"
-  bucket_name = "courseway-bucket"
-  region      = var.AWS_REGION
-  account_name = "s3"
-}
+# module "s3" {
+#   source      = "./modules/s3"
+#   bucket_name = "courseway-bucket"
+#   region      = var.AWS_REGION
+#   account_name = "s3"
+# }
 
-module "registry" {
-  source        = "./modules/registry"
-  registry_name = "courseway"
-  account_name  = "registry"
-}
+# module "registry" {
+#   source        = "./modules/registry"
+#   registry_name = "courseway"
+#   account_name  = "registry"
+# }
 
 # module "allow_eks_access_iam_policy" {
 #   source = "terraform-aws-modules/iam/aws//modules/iam-policy"
