@@ -34,7 +34,7 @@ jobs:
       run: terraform init -input=false -backend-config="access_key=${{ secrets.SPACE_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.SPACE_SECRET_KEY }}"
 
     - name: Plan Terraform changes
-      run: terraform plan -input=false 
+      run: terraform plan -input=false -var="AWS_REGION=${{ secrets.TOKEN }}" -var="SPACE_ACCESS_KEY=${{ secrets.SPACE_ACCESS_KEY }}" -var="SPACE_SECRET_KEY=${{ secrets.SPACE_SECRET_KEY }}"
 
     - name: Apply Terraform changes
-      run: terraform apply --auto-approve
+      run: terraform apply --auto-approve -var="AWS_REGION=${{ secrets.TOKEN }}" -var="SPACE_ACCESS_KEY=${{ secrets.SPACE_ACCESS_KEY }}" -var="SPACE_SECRET_KEY=${{ secrets.SPACE_SECRET_KEY }}"

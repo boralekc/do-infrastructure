@@ -1,14 +1,23 @@
 # Провайдер для создания ресурсов в DigitalOcean
 provider "digitalocean" {
-  token = var.do_token  # Ваш DigitalOcean API токен
+  token = var.TOKEN  # Ваш DigitalOcean API токен
 }
 
 terraform {
-required_version = ">= 1.6.3"
+required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.62.0"
+    }
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"  # Укажите нужную версию, если у вас есть предпочтения
+    }
+  }
 
   backend "s3" {
     endpoints = {
-      s3 = "https://fra1.digitaloceanspaces.com"
+      s3 = "https://s3state.fra1.digitaloceanspaces.com"
     }
     access_key     = var.SPACE_ACCESS_KEY
     secret_key     = var.SPACE_SECRET_KEY
