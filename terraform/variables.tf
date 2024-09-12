@@ -1,18 +1,30 @@
-variable "AWS_REGION" {
+variable "TOKEN" {
   description = "Database username"
 }
 
-variable "DB_USER" {
+variable "SPACE_ACCESS_KEY" {
   description = "Database username"
 }
 
-variable "DB_PASSWORD" {
+variable "SPACE_SECRET_KEY" {
   description = "Database password"
 }
 
-variable "CLUSTER_NAME" {
-  description = "Database password"
-}
+# variable "AWS_REGION" {
+#   description = "Database username"
+# }
+
+# variable "DB_USER" {
+#   description = "Database username"
+# }
+
+# variable "DB_PASSWORD" {
+#   description = "Database password"
+# }
+
+# variable "CLUSTER_NAME" {
+#   description = "Database password"
+# }
 
 # variable "CLOUD_ID" {
 #   description = "Cloud id"
