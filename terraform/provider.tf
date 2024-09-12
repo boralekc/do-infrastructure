@@ -16,7 +16,7 @@ required_providers {
   }
 
   backend "s3" {
-    endpoint = {
+    endpoints = {
       s3 = "https://fra1.digitaloceanspaces.com"
     }
     access_key     = var.SPACE_ACCESS_KEY
