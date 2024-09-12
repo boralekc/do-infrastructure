@@ -16,8 +16,8 @@ required_providers {
   }
 
   backend "s3" {
-    endpoints = {
-      s3 = "https://s3state.fra1.digitaloceanspaces.com"
+    endpoint = {
+      s3 = "https://fra1.digitaloceanspaces.com"
     }
     access_key     = var.SPACE_ACCESS_KEY
     secret_key     = var.SPACE_SECRET_KEY
