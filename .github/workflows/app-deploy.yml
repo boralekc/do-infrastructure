@@ -17,16 +17,11 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
-          echo "::set-output name=ssh_key::$(cat ~/.ssh/id_rsa)"
-          echo "::set-output name=ssh_key_pub::$(cat ~/.ssh/id_rsa.pub)"
 
       - name: Set up SSH
         run: |
-          echo "${{ steps.generate_ssh_key.outputs.ssh_key }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
-        
 
       - name: Set SSH key path
         run: echo "SSH_PRIVATE_KEY_PATH=~/.ssh/id_rsa" >> $GITHUB_ENV
@@ -35,6 +30,5 @@ jobs:
         env:
           ANSIBLE_HOST_KEY_CHECKING: "false"
           DROPLET_IP: ${{ secrets.DROPLET_IP }}
-          ANSIBLE_CONFIG: ${{ vars.ANSIBLE_CONFIG }}
         run: |
-          ansible-playbook -i ${{ github.workspace }}/ansible/inventory.yml ${{ github.workspace }}/ansible/playbooks/k3s.yml
+          ansible-playbook -i ${{ github.workspace }}/ansible/inventory.yml ${{ github.workspace }}/ansible/playbooks/k3s.yml -vvv
