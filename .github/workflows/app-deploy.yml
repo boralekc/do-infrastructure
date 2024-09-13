@@ -21,9 +21,8 @@ jobs:
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
 
-      - name: Add Droplet's SSH key to known hosts
-        run: |
-          ssh-keyscan ${{ secrets.DROPLET_IP }} >> ~/.ssh/known_hosts
+      - name: Set SSH key path
+        run: echo "SSH_PRIVATE_KEY_PATH=~/.ssh/id_rsa" >> $GITHUB_ENV
 
       - name: Run Ansible playbook
         env:
