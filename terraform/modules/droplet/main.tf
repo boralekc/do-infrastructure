@@ -21,5 +21,5 @@ resource "digitalocean_droplet" "example" {
   image  = var.droplet_image
   size   = var.droplet_size
   region = var.vpc_region
-  vpc_uuid = digitalocean_vpc.k3s
+  vpc_uuid = digitalocean_vpc.k3s.id
 }
