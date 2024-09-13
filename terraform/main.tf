@@ -19,10 +19,3 @@ module "database" {
   name_db_deutschlern = var.DB_DEUTSCHLERN
   token         = var.TOKEN
 }
-
-module "registry" {
-  source        = "./modules/registry"
-  registry_name = "devops-registry"
-  type_registry = "starter"
-  token         = var.TOKEN
-}
