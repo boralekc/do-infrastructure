@@ -29,12 +29,12 @@ jobs:
       id: fmt
       run: terraform fmt -check
       continue-on-error: true
-      
-    - name: Initialize Terraform
-      run: terraform providers
 
     - name: Initialize Terraform
       run: terraform init -input=false -backend-config="access_key=${{ secrets.SPACE_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.SPACE_SECRET_KEY }}"
+
+    - name: View terrafrom providers
+      run: terraform providers
 
     - name: Plan Terraform changes
       run: terraform plan -input=false -var="TOKEN=${{ secrets.TOKEN }}" -var="SPACE_ACCESS_KEY=${{ secrets.SPACE_ACCESS_KEY }}" -var="SPACE_SECRET_KEY=${{ secrets.SPACE_SECRET_KEY }}" -var="DB_DEUTSCHHUB=${{ secrets.DB_DEUTSCHHUB }}" -var="DB_DEUTSCHLERN=${{ secrets.DB_DEUTSCHLERN }}"
