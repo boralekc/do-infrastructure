@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
+provider "digitalocean" {
+  token = var.token
+}
+
 resource "digitalocean_vpc" "k3s" {
   name   = var.vpc_name
   region = var.vpc_region

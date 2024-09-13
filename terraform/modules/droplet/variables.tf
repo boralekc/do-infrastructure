@@ -23,3 +23,8 @@ variable "droplet_size" {
   description = "Type of droplet"
   type        = string
 }
+
+variable "token" {
+  description = "Token"
+  type        = string
+}

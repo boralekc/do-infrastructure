@@ -33,3 +33,8 @@ variable "name_db_deutschlern" {
   description = "Database name"
   type        = string
 }
+
+variable "token" {
+  description = "Token"
+  type        = string
+}

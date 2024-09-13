@@ -1,4 +1,16 @@
-# Создание кластера базы данных в указанной VPC
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
+provider "digitalocean" {
+  token = var.token
+}
+
 resource "digitalocean_database_cluster" "postgres-example" {
   name       = var.cluster_name
   engine     = var.type_cluster

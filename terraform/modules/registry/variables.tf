@@ -7,3 +7,8 @@ variable "type_registry" {
   description = "Type registry"
   type        = string
 }
+
+variable "token" {
+  description = "Token"
+  type        = string
+}
