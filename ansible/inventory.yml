@@ -3,4 +3,4 @@ all:
     droplet:
       ansible_host: "{{ lookup('env', 'DROPLET_IP') }}"
       ansible_user: root
-      ansible_ssh_private_key_file: ~/.ssh/id_rsa
+      ansible_ssh_private_key_file: "{{ lookup('env', 'ANSIBLE_CONFIG') }}"/.ssh/id_rsa
