@@ -1,0 +1,6 @@
+- name: Deploy k3s to droplet
+  hosts: droplets
+  gather_facts: yes
+  become: yes
+  roles:
+    - k3s
