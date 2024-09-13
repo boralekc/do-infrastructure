@@ -11,7 +11,7 @@ provider "digitalocean" {
   token = var.token
 }
 
-resource "digitalocean_container_registry" "docker" {
+resource "digitalocean_container_registry" "devops-registry" {
   name                   = var.registry_name
   subscription_tier_slug = var.type_registry
 }
