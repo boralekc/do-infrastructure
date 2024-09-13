@@ -22,7 +22,7 @@ module "database" {
 
 module "registry" {
   source        = "./modules/registry"
-  registry_name = "docker"
+  registry_name = "devops-registry"
   type_registry = "starter"
   token         = var.TOKEN
 }
