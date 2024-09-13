@@ -5,10 +5,6 @@ provider "digitalocean" {
 
 terraform {
 required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.62.0"
-    }
     digitalocean = {
       source  = "digitalocean/digitalocean"
       version = "~> 2.0"  # Укажите нужную версию, если у вас есть предпочтения
