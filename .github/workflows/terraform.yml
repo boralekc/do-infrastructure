@@ -28,7 +28,10 @@ jobs:
     - name: Terraform Format
       id: fmt
       run: terraform fmt -check
-      continue-on-error: true    
+      continue-on-error: true
+      
+    - name: Initialize Terraform
+      run: terraform providers
 
     - name: Initialize Terraform
       run: terraform init -input=false -backend-config="access_key=${{ secrets.SPACE_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.SPACE_SECRET_KEY }}"
