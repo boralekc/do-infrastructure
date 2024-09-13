@@ -1,6 +1,5 @@
-# Провайдер для создания ресурсов в DigitalOcean
 provider "digitalocean" {
-  token = var.TOKEN  # Ваш DigitalOcean API токен
+  token = var.TOKEN
 }
 
 terraform {
