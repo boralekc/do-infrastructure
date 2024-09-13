@@ -1,6 +1,6 @@
 # ansible/roles/k3s/tasks/main.yml
 - name: Install K3s (Kubernetes Lightweight)
-  shell: curl -sfL https://get.k3s.io | sh -
+  sh: curl -sfL https://get.k3s.io | sh -
 
 - name: Ensure K3s is running
   systemd:
