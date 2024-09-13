@@ -18,3 +18,13 @@ variable "token" {
   description = "Token"
   type        = string
 }
+
+variable "access_key" {
+  description = "Key for space access"
+  type        = string
+}
+
+variable "secret_key" {
+  description = "Secret key for space access"
+  type        = string
+}

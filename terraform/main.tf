@@ -26,4 +26,6 @@ module "spaces" {
   space_dutschlern = "s3-deutschlern"
   region           = "fra1"
   token            = var.TOKEN
+  access_key       = var.SPACE_ACCESS_KEY
+  secret_key       = var.SPACE_SECRET_KEY
 }

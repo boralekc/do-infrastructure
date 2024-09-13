@@ -9,6 +9,8 @@ terraform {
 
 provider "digitalocean" {
   token = var.token
+  spaces_access_id  = var.access_key
+  spaces_secret_key = var.secret_key
 }
 
 resource "digitalocean_spaces_bucket" "s3-deutschhub" {
