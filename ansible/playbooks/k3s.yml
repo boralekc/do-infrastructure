@@ -1,5 +1,5 @@
 - name: Deploy k3s to droplet
-  hosts: droplets
+  hosts: droplet
   gather_facts: yes
   become: yes
   become_user: runner
