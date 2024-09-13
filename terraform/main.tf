@@ -25,4 +25,5 @@ module "spaces" {
   space_dutschhub  = "s3-deutschhub"
   space_dutschlern = "s3-deutschlern"
   region           = "fra1"
+  token            = var.TOKEN
 }

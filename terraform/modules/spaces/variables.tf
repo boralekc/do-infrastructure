@@ -13,3 +13,8 @@ variable "region" {
   description = "Region"
   type        = string
 }
+
+variable "token" {
+  description = "Token"
+  type        = string
+}

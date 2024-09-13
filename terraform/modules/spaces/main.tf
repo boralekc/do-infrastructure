@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "digitalocean" {
+  token = var.token
+}
+
 resource "digitalocean_spaces_bucket" "s3-deutschhub" {
   name   = var.space_dutschhub
   region = var.region
