@@ -2,5 +2,6 @@
   hosts: droplets
   gather_facts: yes
   become: yes
+  become_user: runner
   roles:
     - k3s
