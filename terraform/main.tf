@@ -1,12 +1,3 @@
-terraform {
-required_providers {
-    digitalocean = {
-      source  = "digitalocean/digitalocean"
-      version = "~> 2.0"
-    }
-  }
-}
-
 module "droplet" {
   source        = "./modules/droplet"
   vpc_name      = "k3s-vpc"
