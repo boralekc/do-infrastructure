@@ -17,10 +17,13 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
-      
+
+      - name: Print SSH key
+        run: |
+          cat ~/.ssh/id_rsa
+
       - name: Set up SSH
         run: |
-          echo "${{ steps.generate_ssh_key.outputs.ssh_key }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
