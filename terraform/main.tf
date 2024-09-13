@@ -1,7 +1,3 @@
-provider "digitalocean" {
-  token = var.TOKEN
-}
-
 terraform {
 required_providers {
     digitalocean = {
