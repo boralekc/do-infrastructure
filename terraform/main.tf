@@ -8,17 +8,17 @@ module "droplet" {
   token         = var.TOKEN
 }
 
-module "database" {
-  source              = "./modules/postgres"
-  cluster_name        = "postgres-cluster"
-  type_cluster        = "pg"
-  version_cluster     = "16"
-  size_cluster        = "db-s-1vcpu-1gb"
-  region              = "fra1"
-  name_db_deutschhub  = var.DB_DEUTSCHHUB
-  name_db_deutschlern = var.DB_DEUTSCHLERN
-  token         = var.TOKEN
-}
+# module "database" {
+#   source              = "./modules/postgres"
+#   cluster_name        = "postgres-cluster"
+#   type_cluster        = "pg"
+#   version_cluster     = "16"
+#   size_cluster        = "db-s-1vcpu-1gb"
+#   region              = "fra1"
+#   name_db_deutschhub  = var.DB_DEUTSCHHUB
+#   name_db_deutschlern = var.DB_DEUTSCHLERN
+#   token         = var.TOKEN
+# }
 
 # module "spaces" {
 #   source           = "./modules/spaces"
