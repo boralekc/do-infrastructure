@@ -20,12 +20,12 @@ module "database" {
   token         = var.TOKEN
 }
 
-module "spaces" {
-  source           = "./modules/spaces"
-  space_dutschhub  = "s3-deutschhub"
-  space_dutschlern = "s3-deutschlern"
-  region           = "fra1"
-  token            = var.TOKEN
-  access_key       = var.SPACE_ACCESS_KEY
-  secret_key       = var.SPACE_SECRET_KEY
-}
+# module "spaces" {
+#   source           = "./modules/spaces"
+#   space_dutschhub  = "s3-deutschhub"
+#   space_dutschlern = "s3-deutschlern"
+#   region           = "fra1"
+#   token            = var.TOKEN
+#   access_key       = var.SPACE_ACCESS_KEY
+#   secret_key       = var.SPACE_SECRET_KEY
+# }
