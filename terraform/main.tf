@@ -1,12 +1,23 @@
-module "droplet" {
-  source        = "./modules/droplet"
-  vpc_name      = "k3s-vpc"
-  vpc_region    = "fra1"
-  droplet_name  = "k3s-droplet"
-  droplet_image = "ubuntu-20-04-x64"
-  droplet_size  = "s-2vcpu-4gb"
-  token         = var.TOKEN
+module "k8s" {
+  source          = "./modules/k8s"
+  cluster_name    = "k8s-cluster"
+  cluster_region  = "fra1"
+  cluster_version = "1.31.1-do.0"
+  pool_name       = "worker-pool"
+  pool_size       = "s-4vcpu-8gb"
+  node_count      = 2
+  token           = var.TOKEN
 }
+
+# module "droplet" {
+#   source        = "./modules/droplet"
+#   vpc_name      = "k3s-vpc"
+#   vpc_region    = "fra1"
+#   droplet_name  = "k3s-droplet"
+#   droplet_image = "ubuntu-20-04-x64"
+#   droplet_size  = "s-2vcpu-4gb"
+#   token         = var.TOKEN
+# }
 
 # module "database" {
 #   source              = "./modules/postgres"
