@@ -16,7 +16,7 @@ required_providers {
     }
     access_key     = var.SPACE_ACCESS_KEY
     secret_key     = var.SPACE_SECRET_KEY
-    bucket         = "s3state"
+    bucket         = "s3terraform"
     key            = "terraform-state/terraform.tfstate"
 
     # Deactivate a few AWS-specific checks
